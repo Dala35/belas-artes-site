@@ -1,35 +1,137 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html><html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Formação Belas Artes</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Centro de Formação Profissional Belas Artes - Dança, Música, Teatro e Artes Visuais.">
+  <title>Centro Belas Artes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    header {
+      background: linear-gradient(90deg, #a0041e, #f5af19);
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      margin: 0;
+    }
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
+      text-decoration: none;
+      color: #a0041e;
+      font-weight: 600;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .highlight {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .course {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #a0041e;
+      color: white;
+      margin-top: 40px;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Centro de Formação Belas Artes</h1>
-        <nav>
-            <ul>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="inscrição.html">Inscrição</a></li>
-                <li><a href="equipe.html">Equipe</a></li>
-                <li><a href="depoimentos.html">Depoimentos</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Centro de Formação Profissional Belas Artes</h1>
+    <p>Transformando talentos em carreiras</p>
+  </header>
+  <nav>
+    <a href="#cursos">Cursos</a>
+    <a href="#sobre">Sobre Nós</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <section>
+    <div class="highlight">
+      <h2>Missão e Visão</h2>
+      <p>Formar profissionais nas áreas artísticas com excelência, promovendo a cultura angolana e a criatividade jovem.</p>
+    </div><div class="highlight" id="cursos">
+  <h2>Cursos em Destaque</h2>
+  <div class="courses">
+    <div class="course">
+      <h3>Dança Contemporânea</h3>
+      <p>Expressão corporal e técnica com foco na criação coreográfica moderna.</p>
+    </div>
+    <div class="course">
+      <h3>Música – Canto & Instrumentos</h3>
+      <p>Aulas práticas e teóricas com professores especializados em vários estilos.</p>
+    </div>
+    <div class="course">
+      <h3>Teatro</h3>
+      <p>Formação em actuação e direção, com apresentações públicas.</p>
+    </div>
+    <div class="course">
+      <h3>Artes Visuais</h3>
+      <p>Desenho, pintura e técnicas de expressão visual para artistas em formação.</p>
+    </div>
+  </div>
+</div>
 
-    <main>
-        <section>
-            <h2>Bem-vindo ao Centro de Formação Belas Artes</h2>
-            <p>Descubra os cursos e oportunidades que temos para si nas áreas de dança, música, artes plásticas e teatro.</p>
-        </section>
-    </main>
+<div class="highlight" id="galeria">
+  <h2>Galeria de Eventos</h2>
+  <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo de Apresentação"></iframe>
+</div>
 
-    <footer>
-        <p>&copy; 2025 Centro de Formação Belas Artes. Todos os direitos reservados.</p>
-    </footer>
+<div class="highlight" id="sobre">
+  <h2>Sobre Nós</h2>
+  <p>O Centro Belas Artes conta com uma equipe multidisciplinar dedicada à formação artística. Fundado com o propósito de valorizar o talento nacional e preservar o patrimônio cultural.</p>
+</div>
+
+<div class="highlight" id="contato">
+  <h2>Contato</h2>
+  <p>Email: contato@belasartes.co.ao<br>WhatsApp: +244 999 999 999</p>
+</div>
+
+  </section>
+  <footer>
+    &copy; 2025 Centro de Formação Profissional Belas Artes. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
-Criar página inicial index.html
