@@ -169,29 +169,7 @@
       <img src="https://source.unsplash.com/150x150/?artist" alt="Professor de Artes" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
       <h4 style="margin: 10px 0 5px;">Sandra Kiala</h4>
       <p style="font-size: 0.9em;">Professora de Pintura e Desenho</p>
-    </div>@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  section {
-    padding: 20px 10px;
-  }
-
-  .highlight {
-    padding: 15px;
-  }
-
-  iframe {
-    height: 200px;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
+    </div>
 
   </div>
 </div>
@@ -223,7 +201,14 @@
   </div>
 </section>
 
-<footer>
+<footer><footer>
+  <p>&copy; 2025 Centro de Formação Profissional Belas Artes</p>
+  <div style="margin-top: 10px;">
+    <a href="https://facebook.com" target="_blank" style="margin: 0 10px;">Facebook</a>
+    <a href="https://instagram.com" target="_blank" style="margin: 0 10px;">Instagram</a>
+    <a href="https://youtube.com" target="_blank" style="margin: 0 10px;">YouTube</a>
+  </div>
+</footer>
   &copy; 2025 Centro de Formação Profissional Belas Artes
 </footer>
 
@@ -234,7 +219,7 @@
     const senha = prompt("Digite a senha do administrador:");
     if (senha === "belas2025") {
       galeriaAdmin = true;
-      document.getElementById('formulario-galeria').style.display = "block";
+      do'formulario-galeria').style.display = "block";
       alert("Acesso de administrador concedido.");
     } else {
       alert("Senha incorreta.");
