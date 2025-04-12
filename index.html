@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="pt">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,6 +76,25 @@
       border: none;
       border-radius: 10px;
     }
+    input, select, button, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+    }
+    button {
+      background-color: #a0041e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover {
+      background-color: #800317;
+    }
   </style>
 </head>
 <body>
@@ -87,52 +107,103 @@
     <a href="#sobre">Sobre Nós</a>
     <a href="#galeria">Galeria</a>
     <a href="#contato">Contato</a>
+    <a href="#mural">Mural</a>
+    <a href="#inscricao">Inscrição</a>
   </nav>
   <section>
     <div class="highlight">
       <h2>Missão e Visão</h2>
       <p>Formar profissionais nas áreas artísticas com excelência, promovendo a cultura angolana e a criatividade jovem.</p>
-    </div><div class="highlight" id="cursos">
-  <h2>Cursos em Destaque</h2>
-  <div class="courses">
-    <div class="course">
-      <h3>Dança Contemporânea</h3>
-      <p>Expressão corporal e técnica com foco na criação coreográfica moderna.</p>
     </div>
-    <div class="course">
-      <h3>Música – Canto & Instrumentos</h3>
-      <p>Aulas práticas e teóricas com professores especializados em vários estilos.</p>
+
+    <div class="highlight" id="cursos">
+      <h2>Cursos em Destaque</h2>
+      <div class="courses">
+        <div class="course">
+          <h3>Dança Contemporânea</h3>
+          <p>Expressão corporal e técnica com foco na criação coreográfica moderna.</p>
+        </div>
+        <div class="course">
+          <h3>Música – Canto & Instrumentos</h3>
+          <p>Aulas práticas e teóricas com professores especializados em vários estilos.</p>
+        </div>
+        <div class="course">
+          <h3>Teatro</h3>
+          <p>Formação em actuação e direção, com apresentações públicas.</p>
+        </div>
+        <div class="course">
+          <h3>Artes Visuais</h3>
+          <p>Desenho, pintura e técnicas de expressão visual para artistas em formação.</p>
+        </div>
+      </div>
     </div>
-    <div class="course">
-      <h3>Teatro</h3>
-      <p>Formação em actuação e direção, com apresentações públicas.</p>
+
+    <div class="highlight" id="galeria">
+      <h2>Galeria de Eventos</h2>
+      <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo de Apresentação"></iframe>
     </div>
-    <div class="course">
-      <h3>Artes Visuais</h3>
-      <p>Desenho, pintura e técnicas de expressão visual para artistas em formação.</p>
+
+    <div class="highlight" id="sobre">
+      <h2>Sobre Nós</h2>
+      <p>O Centro Belas Artes conta com uma equipe multidisciplinar dedicada à formação artística. Fundado com o propósito de valorizar o talento nacional e preservar o patrimônio cultural.</p>
     </div>
-  </div>
-</div>
 
-<div class="highlight" id="galeria">
-  <h2>Galeria de Eventos</h2>
-  <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo de Apresentação"></iframe>
-  
-</div>
+    <div class="highlight" id="contato">
+      <h2>Contato</h2>
+      <p>Email: contato@belasartes.co.ao<br>WhatsApp: +244 999 999 999</p>
+    </div>
 
-<div class="highlight" id="sobre">
-  <h2>Sobre Nós</h2>
-  <p>O Centro Belas Artes conta com uma equipe multidisciplinar dedicada à formação artística. Fundado com o propósito de valorizar o talento nacional e preservar o patrimônio cultural.</p>
-</div>
+    <div class="highlight" id="mural">
+      <h2>Mural de Novidades</h2>
+      <ul id="lista-mural">
+        <li>Inscrições abertas para o curso de Teatro!</li>
+        <li>Show de talentos no próximo sábado às 18h.</li>
+      </ul>
+      <input type="text" id="novo-item" placeholder="Escreva uma novidade...">
+      <button onclick="adicionarItem()">Adicionar</button>
+    </div>
 
-<div class="highlight" id="contato">
-  <h2>Contato</h2>
-  <p>Email: contato@belasartes.co.ao<br>WhatsApp: +244 999 999 999</p>
-</div>
+    <div class="highlight" id="inscricao">
+      <h2>Inscreva-se Agora</h2>
+      <form onsubmit="return enviarFormulario();">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
 
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="curso">Curso de Interesse:</label>
+        <select id="curso" name="curso" required>
+          <option value="">Selecione</option>
+          <option>Dança Contemporânea</option>
+          <option>Música – Canto & Instrumentos</option>
+          <option>Teatro</option>
+          <option>Artes Visuais</option>
+        </select>
+
+        <button type="submit">Enviar Inscrição</button>
+      </form>
+    </div>
   </section>
   <footer>
     &copy; 2025 Centro de Formação Profissional Belas Artes. Todos os direitos reservados.
   </footer>
+
+  <script>
+    function adicionarItem() {
+      const item = document.getElementById('novo-item').value;
+      if (item.trim() !== '') {
+        const li = document.createElement('li');
+        li.textContent = item;
+        document.getElementById('lista-mural').appendChild(li);
+        document.getElementById('novo-item').value = '';
+      }
+    }
+
+    function enviarFormulario() {
+      alert('Inscrição enviada com sucesso!');
+      return false;
+    }
+  </script>
 </body>
 </html>
