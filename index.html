@@ -134,3 +134,128 @@
       <div class="course"><h3>Artes Visuais</h3><p>Desenho e pintura para artistas iniciantes e avançados.</p></div>
     </div>
   </div>
+<div class="highlight" id="galeria">
+    <h2>Galeria de Fotos e Vídeos</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+      <img src="https://source.unsplash.com/400x300/?dance,art" alt="Dança" style="width: 100%; border-radius: 10px;">
+      <img src="https://source.unsplash.com/400x300/?music,classical" alt="Música" style="width: 100%; border-radius: 10px;">
+      <img src="https://source.unsplash.com/400x300/?painting,canvas" alt="Pintura" style="width: 100%; border-radius: 10px;">
+      <img src="https://source.unsplash.com/400x300/?theatre,actor" alt="Teatro" style="width: 100%; border-radius: 10px;">
+    </div>
+    <h3 style="margin-top: 40px;">Vídeo de Apresentação</h3>
+    <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo Apresentação" allowfullscreen></iframe>
+  </div>
+
+  <div class="highlight" id="blog">
+    <h2>Blog – Notícias e Artigos</h2>
+    <div class="courses">
+      <div class="course">
+        <h3>5 Dicas para Melhorar sua Performance no Palco</h3>
+        <p>Descubra técnicas simples que farão diferença nas suas apresentações.</p>
+        <a href="#" style="color:#a0041e; font-weight:bold;">Ler mais</a>
+      </div>
+      <div class="course">
+        <h3>A Importância da Arte na Formação de Jovens</h3>
+        <p>Como a educação artística contribui para o desenvolvimento pessoal.</p>
+        <a href="#" style="color:#a0041e; font-weight:bold;">Ler mais</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight" id="eventos">
+    <h2>Eventos Culturais</h2>
+    <ul style="padding-left: 20px;">
+      <li><strong>10 de Maio:</strong> Espetáculo de Teatro "A Voz da Tradição"</li>
+      <li><strong>25 de Maio:</strong> Concerto de Encerramento com turma de Música</li>
+      <li><strong>15 de Junho:</strong> Exposição de Pintura dos alunos de Artes Visuais</li>
+    </ul>
+  </div>
+
+  <div class="highlight" id="equipa">
+    <h2>Equipe Pedagógica</h2>
+    <div class="equipe-grid">
+      <div class="course"><h3>Dala De Carvalho</h3><p>Diretor Pedagógico e especialista em música tradicional angolana.</p></div>
+      <div class="course"><h3>Maria Domingos</h3><p>Professora de Dança – Ballet e folclore angolano.</p></div>
+      <div class="course"><h3>José Luvumbo</h3><p>Professor de Artes Plásticas – Desenho e pintura.</p></div>
+    </div>
+  </div>
+
+  <div class="highlight" id="mural">
+    <h2>Mural de Novidades e Imagens</h2>
+    <ul id="lista-mural">
+      <li>Inscrições abertas para o 2º trimestre de 2025.</li>
+    </ul>
+    <input type="text" id="novo-texto" placeholder="Digite um texto ou link de imagem... (ex: https://...)">
+    <button onclick="autenticarAdmin()">Sou Administrador</button>
+    <button onclick="adicionarItem()" id="botao-adicionar" disabled>Adicionar</button>
+  </div>
+
+  <div class="highlight" id="inscricao">
+    <h2>Formulário de Inscrição</h2>
+    <form onsubmit="return enviarFormulario();">
+      <label>Nome:</label><input type="text" required>
+      <label>Email:</label><input type="email" required>
+      <label>Curso:</label>
+      <select required>
+        <option value="">Selecione...</option>
+        <option>Dança</option>
+        <option>Música</option>
+        <option>Teatro</option>
+        <option>Artes Visuais</option>
+      </select>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <div class="highlight" id="contato">
+    <h2>Contato</h2>
+    <p>Email: contato@belasartes.co.ao<br>WhatsApp: +244 999 999 999</p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Centro de Formação Profissional Belas Artes
+  <br>
+  <small>Siga-nos: Facebook | Instagram | YouTube</small>
+</footer>
+
+<script>
+  let autorizado = false;
+  function autenticarAdmin() {
+    const senha = prompt("Digite o código de administrador:");
+    if (senha === "belas2025") {
+      autorizado = true;
+      document.getElementById('novo-texto').disabled = false;
+      document.getElementById('botao-adicionar').disabled = false;
+      alert("Acesso concedido.");
+    } else {
+      alert("Código incorreto.");
+    }
+  }
+
+  function adicionarItem() {
+    if (!autorizado) return;
+    const texto = document.getElementById('novo-texto').value.trim();
+    if (texto !== '') {
+      const li = document.createElement('li');
+      if (texto.startsWith("http") && (texto.endsWith(".jpg") || texto.endsWith(".jpeg") || texto.endsWith(".png") || texto.endsWith(".webp"))) {
+        const img = document.createElement('img');
+        img.src = texto;
+        img.alt = "Imagem do mural";
+        li.appendChild(img);
+      } else {
+        li.textContent = texto;
+      }
+      document.getElementById('lista-mural').appendChild(li);
+      document.getElementById('novo-texto').value = '';
+    }
+  }
+
+  function enviarFormulario() {
+    alert("Inscrição enviada com sucesso!");
+    return false;
+  }
+</script>
+
+</body>
+</html>
