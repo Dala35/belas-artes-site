@@ -1,74 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Centro de Formação Profissional Belas Artes - Dança, Música, Teatro e Artes Visuais.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Centro de Formação Profissional Belas Artes – Dança, Música, Teatro e Artes Plásticas em Angola."/>
   <title>Centro Belas Artes</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
+      background: #f8f8f8;
       color: #333;
-      background-color: #f9f9f9;
     }
     header {
-      background: linear-gradient(90deg, #a0041e, #f5af19);
-      padding: 20px;
+      background: linear-gradient(to right, #a0041e, #f5af19);
       color: white;
       text-align: center;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5em;
-      margin: 0;
+      padding: 30px 20px;
     }
     nav {
-      background-color: white;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 10px;
+      gap: 15px;
+      background: #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 12px;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 100;
     }
     nav a {
       text-decoration: none;
       color: #a0041e;
-      font-weight: 600;
+      font-weight: bold;
     }
     section {
-      padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
+      padding: 30px 20px;
     }
     .highlight {
-      background-color: #fff;
-      padding: 20px;
+      background: #fff;
+      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
-    .courses {
+    h2 { color: #a0041e; }
+    .courses, .equipe-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     .course {
-      background: white;
+      background: #fafafa;
       padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #a0041e;
-      color: white;
-      margin-top: 40px;
+      border-radius: 8px;
+      border-left: 4px solid #a0041e;
     }
     iframe {
       width: 100%;
@@ -76,137 +67,144 @@
       border: none;
       border-radius: 10px;
     }
-    input, select, button, textarea {
+    input, select, button {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
+      margin-top: 10px;
       margin-bottom: 15px;
-      border: 1px solid #ccc;
       border-radius: 8px;
+      border: 1px solid #ccc;
       font-family: 'Inter', sans-serif;
     }
     button {
-      background-color: #a0041e;
-      color: white;
+      background: #a0041e;
+      color: #fff;
+      font-weight: bold;
       border: none;
-      cursor: pointer;
-      font-weight: 600;
     }
-    button:hover {
-      background-color: #800317;
+    footer {
+      background: #a0041e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Centro de Formação Profissional Belas Artes</h1>
-    <p>Transformando talentos em carreiras</p>
-  </header>
-  <nav>
+
+<header>
+  <h1>Centro de Formação Profissional Belas Artes</h1>
+  <p>Transformando talentos em carreiras com arte e cultura</p>
+</header>
+
 <nav>
   <a href="#cursos">Cursos</a>
-  <a href="#sobre">Sobre Nós</a>
+  <a href="#sobre">Sobre</a>
   <a href="#galeria">Galeria</a>
+  <a href="#equipa">Equipe</a>
   <a href="#mural">Mural</a>
   <a href="#inscricao">Inscrição</a>
-  <a href="#depoimentos">Depoimentos</a>
-  <a href="#equipa">Equipe</a>
+  <a href="#contato">Contato</a>
 </nav>
-  </nav>
-  <section>
-    <div class="highlight">
-      <h2>Missão e Visão</h2>
-      <p>Formar profissionais nas áreas artísticas com excelência, promovendo a cultura angolana e a criatividade jovem.</p>
+
+<section>
+  <div class="highlight">
+    <h2>Missão</h2>
+    <p>Formar profissionais nas áreas artísticas com excelência, promovendo a cultura angolana e desenvolvendo o potencial criativo da juventude.</p>
+  </div>
+
+  <div class="highlight" id="cursos">
+    <h2>Cursos</h2>
+    <div class="courses">
+      <div class="course"><h3>Dança Contemporânea</h3><p>Expressão e técnica com criação coreográfica moderna.</p></div>
+      <div class="course"><h3>Canto & Instrumentos</h3><p>Aulas práticas com profissionais experientes.</p></div>
+      <div class="course"><h3>Teatro</h3><p>Formação em actuação e direção com apresentações públicas.</p></div>
+      <div class="course"><h3>Artes Visuais</h3><p>Desenho e pintura para artistas iniciantes e avançados.</p></div>
     </div>
+  </div>
 
-    <div class="highlight" id="cursos">
-      <h2>Cursos em Destaque</h2>
-      <div class="courses">
-        <div class="course">
-          <h3>Dança Contemporânea</h3>
-          <p>Expressão corporal e técnica com foco na criação coreográfica moderna.</p>
-        </div>
- 
-          <h3>Música – Canto & Instrumentos</h3>
-          <p>Aulas práticas e teóricas com professores especializados em vários estilos.</p>
-        </div>
-        <div class="course">
-          <h3>Teatro</h3>
-          <p>Formação em actuação e direção, com apresentações públicas.</p>
-        </div>
-        <div class="course">
-          <h3>Artes Visuais</h3>
-          <p>Desenho, pintura e técnicas de expressão visual para artistas em formação.</p>
-        </div>
-      </div>
+  <div class="highlight" id="galeria">
+    <h2>Galeria</h2>
+    <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo Apresentação"></iframe>
+  </div>
+
+  <div class="highlight" id="equipa">
+    <h2>Equipe Pedagógica</h2>
+    <div class="equipe-grid">
+      <div class="course"><h3>Dala De Carvalho</h3><p>Diretor Pedagógico e especialista em música tradicional angolana.</p></div>
+      <div class="course"><h3>Maria Domingos</h3><p>Professora de Dança – Ballet e folclore angolano.</p></div>
+      <div class="course"><h3>José Luvumbo</h3><p>Professor de Artes Plásticas – Desenho e pintura.</p></div>
     </div>
+  </div>
 
-    <div class="highlight" id="galeria">
-      <h2>Galeria de Eventos</h2>
-      <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo de Apresentação"></iframe>
-    </div>
+  <div class="highlight" id="mural">
+    <h2>Mural</h2>
+    <ul id="lista-mural">
+      <li>Inscrições abertas para o 2º trimestre de 2025.</li>
+    </ul>
+    <input type="text" id="novo-item" placeholder="Digite uma novidade..." disabled>
+    <button onclick="autenticarAdmin()">Sou Administrador</button>
+    <button onclick="adicionarItem()" id="botao-adicionar" disabled>Adicionar</button>
+  </div>
 
-    <div class="highlight" id="sobre">
-      <h2>Sobre Nós</h2>
-      <p>O Centro Belas Artes conta com uma equipe multidisciplinar dedicada à formação artística. Fundado com o propósito de valorizar o talento nacional e preservar o patrimônio cultural.</p>
-    </div>
+  <div class="highlight" id="inscricao">
+    <h2>Formulário de Inscrição</h2>
+    <form onsubmit="return enviarFormulario();">
+      <label>Nome:</label><input type="text" required>
+      <label>Email:</label><input type="email" required>
+      <label>Curso:</label>
+      <select required>
+        <option value="">Selecione...</option>
+        <option>Dança</option>
+        <option>Música</option>
+        <option>Teatro</option>
+        <option>Artes Visuais</option>
+      </select>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
 
-    <div class="highlight" id="contato">
-      <h2>Contato</h2>
-      <p>Email: contato@belasartes.co.ao<br>WhatsApp: +244 999 999 999</p>
-    </div>
+  <div class="highlight" id="contato">
+    <h2>Contato</h2>
+    <p>Email: contato@belasartes.co.ao<br>WhatsApp: +244 999 999 999</p>
+  </div>
+</section>
 
-    <div class="highlight" id="mural">
-      <h2>Mural de Novidades</h2>
-      <ul id="lista-mural">
-        <li>Inscrições abertas para o curso de Teatro!</li>
-        <li>Show de talentos no próximo sábado às 18h.</li>
-      </ul>
-      <input type="text" id="novo-item" placeholder="Escreva uma novidade...">
-      <button onclick="adicionarItem()">Adicionar</button>
-    </div>
+<footer>
+  &copy; 2025 Centro de Formação Profissional Belas Artes
+  <br>
+  <small>Siga-nos: Facebook | Instagram | YouTube</small>
+</footer>
 
-    <div class="highlight" id="inscricao">
-      <h2>Inscreva-se Agora</h2>
-      <form onsubmit="return enviarFormulario();">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="curso">Curso de Interesse:</label>
-        <select id="curso" name="curso" required>
-          <option value="">Selecione</option>
-          <option>Dança Contemporânea, Folclórica e Ballet</option>
-          <option>Música – Canto & Instrumentos</option>
-          <option>Teatro</option>
-          <option>Artes Visuais</option>
-        </select>
-
-        <button type="submit">Enviar Inscrição</button>
-      </form>
-    </div>
-  </section>
-  <footer>
-    &copy; 2025 Centro de Formação Profissional Belas Artes. Todos os direitos reservados.
-  </footer>
-
-  <script>
-    function adicionarItem() {
-      const item = document.getElementById('novo-item').value;
-      if (item.trim() !== '') {
-        const li = document.createElement('li');
-        li.textContent = item;
-        document.getElementById('lista-mural').appendChild(li);
-        document.getElementById('novo-item').value = '';
-      }
+<script>
+  let autorizado = false;
+  function autenticarAdmin() {
+    const senha = prompt("Digite o código de administrador:");
+    if (senha === "belas2025") {
+      autorizado = true;
+      document.getElementById('novo-item').disabled = false;
+      document.getElementById('botao-adicionar').disabled = false;
+      alert("Acesso concedido.");
+    } else {
+      alert("Código incorreto.");
     }
-
-    function enviarFormulario() {
-      alert('Inscrição enviada com sucesso!');
-      return false;
+  }
+  function adicionarItem() {
+    if (!autorizado) return;
+    const item = document.getElementById('novo-item').value;
+    if (item.trim() !== '') {
+      const li = document.createElement('li');
+      li.textContent = item;
+      document.getElementById('lista-mural').appendChild(li);
+      document.getElementById('novo-item').value = '';
     }
-  </script>
+  }
+  function enviarFormulario() {
+    alert("Inscrição enviada com sucesso!");
+    return false;
+  }
+</script>
+
 </body>
-</html>
+      </html>
