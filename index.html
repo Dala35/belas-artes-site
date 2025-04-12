@@ -135,15 +135,70 @@
     </div>
   </div>
 <div class="highlight" id="galeria">
-    <h2>Galeria de Fotos e Vídeos</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-      <img src="https://source.unsplash.com/400x300/?dance,art" alt="Dança" style="width: 100%; border-radius: 10px;">
-      <img src="https://source.unsplash.com/400x300/?music,classical" alt="Música" style="width: 100%; border-radius: 10px;">
-      <img src="https://source.unsplash.com/400x300/?painting,canvas" alt="Pintura" style="width: 100%; border-radius: 10px;">
-      <img src="https://source.unsplash.com/400x300/?theatre,actor" alt="Teatro" style="width: 100%; border-radius: 10px;">
+  <h2>Galeria Interativa de Fotos e Vídeos</h2>
+
+  <div id="galeria-conteudo" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+    <div>
+      <img src="https://source.unsplash.com/400x300/?dance" alt="Imagem inicial" style="width: 100%; border-radius: 10px;">
+      <p style="text-align: center;">Apresentação artística</p>
     </div>
-    <h3 style="margin-top: 40px;">Vídeo de Apresentação</h3>
-    <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo Apresentação" allowfullscreen></iframe>
+    <div>
+      <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo Apresentação" allowfullscreen style="width: 100%; height: 200px; border-radius: 10px;"></iframe>
+      <p style="text-align: center;">Vídeo institucional</p>
+    </div>
+  </div>
+
+  <br>
+  <button onclick="acessarGaleriaAdmin()">Sou Administrador</button>
+  <div id="formulario-galeria" style="display: none; margin-top: 20px;">
+    <input type="text" id="linkGaleria" placeholder="Cole o link da imagem ou vídeo (ex: https://...)" />
+    <button onclick="adicionarGaleria()">Adicionar à Galeria</button>
+  </div>
+</div>
+
+<script>
+  let galeriaAdmin = false;
+
+  function acessarGaleriaAdmin() {
+    const senha = prompt("Digite a senha do administrador:");
+    if (senha === "belas2025") {
+      galeriaAdmin = true;
+      document.getElementById('formulario-galeria').style.display = "block";
+      alert("Acesso de administrador concedido.");
+    } else {
+      alert("Senha incorreta.");
+    }
+  }
+
+  function adicionarGaleria() {
+    if (!galeriaAdmin) return;
+
+    const link = document.getElementById('linkGaleria').value.trim();
+    const container = document.createElement('div');
+
+    if (link.includes("youtube.com/embed/")) {
+      const iframe = document.createElement('iframe');
+      iframe.src = link;
+      iframe.width = "100%";
+      iframe.height = "200";
+      iframe.style.borderRadius = "10px";
+      iframe.allowFullscreen = true;
+      container.appendChild(iframe);
+    } else if (link.match(/\.(jpeg|jpg|png|webp)$/)) {
+      const img = document.createElement('img');
+      img.src = link;
+      img.style.width = "100%";
+      img.style.borderRadius = "10px";
+      container.appendChild(img);
+    } else {
+      alert("Formato inválido. Use link de imagem (.jpg/.png/.webp) ou embed do YouTube.");
+      return;
+    }
+
+    document.getElementById('galeria-conteudo').appendChild(container);
+    document.getElementById('linkGaleria').value = '';
+  }
+</script>
   </div>
 
   <div class="highlight" id="blog">
