@@ -2,263 +2,141 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Centro de Formação Profissional Belas Artes – Dança, Música, Teatro e Artes Plásticas em Angola."/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Centro Belas Artes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f8f8f8;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(to right, #a0041e, #f5af19);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 12px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
-      text-decoration: none;
-      color: #a0041e;
-      font-weight: bold;
-    }
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 30px 20px;
-    }
-    .highlight {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-    h2 { color: #a0041e; }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 10px;
-    }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-family: 'Inter', sans-serif;
-    }
-    button {
-      background: #a0041e;
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-    footer {
-      background: #a0041e;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="logo.png" />
 </head>
 <body>
-<header>
-  <h1>Centro de Formação Profissional Belas Artes</h1>
-  <p>Transformando talentos em carreiras com arte e cultura</p>
-</header>
-<nav>
-  <a href="#cursos">Cursos</a>
-  <a href="#galeria">Galeria</a>
-  <a href="#blog">Blog</a>
-  <a href="#eventos">Eventos</a>
-  <a href="#equipa">Equipe</a>
-  <a href="#mural">Mural</a>
-  <a href="#inscricao">Inscrição</a>
-  <a href="#contato">Contato</a>
-  <a href="#galeria">Galeria</a>
-</nav>
-
-<section><div class="highlight" id="blog">
-  <h2>Blog & Notícias</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-    
-    <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
-      <h3>Nova turma de Dança Contemporânea</h3>
-      <p><strong>Data:</strong> 10 de Abril de 2025</p>
-      <p>Estão abertas as inscrições para a nova turma de Dança. Serão 3 meses de formação com espetáculos no final.</p>
-      <button onclick="alert('Em breve disponível!')">Ler mais</button>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo Belas Artes" />
+      <h1>BELAS ARTES</h1>
     </div>
-    
-    <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
-      <h3>Belas Artes no Festival Cultural</h3>
-      <p><strong>Data:</strong> 25 de Março de 2025</p>
-      <p>O centro marcou presença com apresentações de teatro, música e pintura ao vivo. Veja os melhores momentos!</p>
-      <button onclick="alert('Em breve disponível!')">Ler mais</button>
-    </div>
-
-    <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
-      <h3>Oficina de Pintura com Artistas Locais</h3>
-      <p><strong>Data:</strong> 12 de Fevereiro de 2025</p>
-      <p>Realizamos uma oficina aberta com artistas convidados para ensinar técnicas de pintura tradicional angolana.</p>
-      <button onclick="alert('Em breve disponível!')">Ler mais</button>
-    </div>
-<div class="highlight" id="eventos">
-  <h2>Eventos Culturais</h2>
-  <div style="display: flex; flex-direction: column; gap: 20px;">
-    
-    <div style="background: #fafafa; border-left: 5px solid #a0041e; padding: 15px 20px; border-radius: 8px;">
-      <h3 style="margin-bottom: 5px;">Espetáculo de Teatro - “Cores da Tradição”</h3>
-      <p><strong>Data:</strong> 30 de Abril de 2025</p>
-      <p>Apresentação final dos alunos de Teatro, com cenas inspiradas em contos angolanos e técnicas de direção contemporânea.</p>
-    </div>
-
-    <div style="background: #fafafa; border-left: 5px solid #a0041e; padding: 15px 20px; border-radius: 8px;">
-      <h3 style="margin-bottom: 5px;">Exposição de Artes Visuais</h3>
-      <p><strong>Data:</strong> 15 de Maio de 2025</p>
-      <p>Obras de pintura e desenho realista dos alunos do curso de Artes Plásticas, com visita aberta ao público.</p>
-    </div>
-
-    <div style="background: #fafafa; border-left: 5px solid #a0041e; padding: 15px 20px; border-radius: 8px;">
-      <h3 style="margin-bottom: 5px;">Festival Belas Artes</h3>
-      <p><strong>Data:</strong> 10 de Junho de 2025</p>
-      <p>Um dia de celebração com apresentações de dança, música, performances e feira de talentos artísticos.</p>
-    </div>
-<div class="highlight" id="equipa">
-  <h2>Equipe Pedagógica & Direção</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-
-    <div style="text-align: center;">
-      <img src="https://source.unsplash.com/150x150/?man,teacher" alt="Diretor Pedagógico" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
-      <h4 style="margin: 10px 0 5px;">Dala De Carvalho</h4>
-      <p style="font-size: 0.9em;">Diretor Pedagógico | Educador Musical</p>
-    </div>
-
-    <div style="text-align: center;">
-      <img src="https://source.unsplash.com/150x150/?woman,teacher" alt="Professora de Dança" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
-      <h4 style="margin: 10px 0 5px;">Helena Soares</h4>
-      <p style="font-size: 0.9em;">Professora de Dança Contemporânea</p>
-    </div>
-
-    <div style="text-align: center;">
-      <img src="https://source.unsplash.com/150x150/?musician" alt="Professor de Música" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
-      <h4 style="margin: 10px 0 5px;">Carlos André</h4>
-      <p style="font-size: 0.9em;">Professor de Canto & Instrumentos</p>
-    </div>
-
-    <div style="text-align: center;">
-      <img src="https://source.unsplash.com/150x150/?artist" alt="Professor de Artes" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
-      <h4 style="margin: 10px 0 5px;">Sandra Kiala</h4>
-      <p style="font-size: 0.9em;">Professora de Pintura e Desenho</p>
-    </div>
-
-  </div>
-</div>
-  
-  </div>
-</div>
-  </div>
-</div>
-  <div class="highlight" id="galeria">
-    <h2>Galeria Interativa de Fotos e Vídeos</h2>
-
-    <div id="galeria-conteudo" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-      <div>
-        <img src="https://source.unsplash.com/400x300/?dance" alt="Imagem inicial" style="width: 100%; border-radius: 10px;">
-        <p style="text-align: center;">Apresentação artística</p>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#formacoes">Áreas</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#mural">Mural</a></li>
+        <li><a href="#inscricao">Inscrição</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+      </ul>
+      <div class="idioma">
+        <a href="?lang=pt">PT</a> | <a href="?lang=en">EN</a>
       </div>
-      <div>
-        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo Apresentação" allowfullscreen style="width: 100%; height: 200px; border-radius: 10px;"></iframe>
-        <p style="text-align: center;">Vídeo institucional</p>
+    </nav>
+  </header>
+
+  <!-- Destaque inicial -->
+  <section id="inicio" class="destaque">
+    <img src="teatro-art.jpg" alt="Imagem de Teatro" />
+    <h2>Inspirando talentos, transformando futuros</h2>
+  </section>
+
+  <!-- Áreas de Formação -->
+  <section id="formacoes">
+    <h2>Áreas de Formação</h2>
+    <div class="area">
+      <img src="teatro.jpg" alt="Teatro" />
+      <h3>Teatro</h3>
+      <p>Actuação, improvisação, técnicas de direcção teatral e expressão corporal.</p>
+    </div>
+    <div class="area">
+      <img src="musica.jpg" alt="Música" />
+      <h3>Música</h3>
+      <p>Canto, guitarra, piano, bateria, teoria musical e prática em grupo.</p>
+    </div>
+    <div class="area">
+      <img src="artes.jpg" alt="Artes Plásticas" />
+      <h3>Artes Plásticas</h3>
+      <p>Desenho realista, pintura, história da arte e desenvolvimento criativo.</p>
+    </div>
+    <div class="area">
+      <img src="danca.jpg" alt="Dança" />
+      <h3>Dança</h3>
+      <p>Ballet, dança contemporânea, folclórica e técnicas coreográficas.</p>
+    </div>
+  </section>
+
+  <!-- Sobre Nós -->
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>[Inserir descrição institucional e breve história do centro]</p>
+  </section>
+
+  <!-- Galeria -->
+  <section id="galeria">
+    <h2>Galeria</h2>
+    <div class="galeria-container">
+      <!-- Placeholder de imagens -->
+      <img src="img1.jpg" alt="Galeria 1" />
+      <img src="img2.jpg" alt="Galeria 2" />
+    </div>
+    <button>Carregar mais</button>
+  </section>
+
+  <!-- Mural -->
+  <section id="mural">
+    <h2>Mural</h2>
+    <div class="mural-container">
+      <!-- Conteúdo dinâmico (texto, links, imagens, vídeos) -->
+      <p>[Placeholder de postagem]</p>
+    </div>
+    <button>Carregar mais</button>
+  </section>
+
+  <!-- Inscrição -->
+  <section id="inscricao">
+    <h2>Inscreva-se</h2>
+    <form>
+      <input type="text" placeholder="Nome completo" required />
+      <input type="email" placeholder="E-mail" required />
+      <select>
+        <option>Escolher área de interesse</option>
+        <option>Teatro</option>
+        <option>Música</option>
+        <option>Artes Plásticas</option>
+        <option>Dança</option>
+      </select>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog">
+    <h2>Blog</h2>
+    <article>
+      <h3>[Título do Artigo]</h3>
+      <p>[Resumo do conteúdo com botão “Leia mais”]</p>
+    </article>
+  </section>
+
+  <!-- Equipe -->
+  <section id="equipe">
+    <h2>Nossa Equipe</h2>
+    <div class="membros">
+      <div class="membro">
+        <img src="prof1.jpg" alt="Nome" />
+        <p>Nome - Especialidade</p>
       </div>
+      <!-- Outros membros -->
     </div>
+  </section>
 
-    <br>
-    <button onclick="acessarGaleriaAdmin()">Sou Administrador</button>
-    <div id="formulario-galeria" style="display: none; margin-top: 20px;">
-      <input type="text" id="linkGaleria" placeholder="Cole o link da imagem ou vídeo (ex: https://...)" />
-      <button onclick="adicionarGaleria()">Adicionar à Galeria</button>
-    </div>
-  </div>
-</section>
+  <!-- Frases Inspiradoras -->
+  <section id="frases">
+    <h2>Frases Inspiradoras</h2>
+    <blockquote>“A arte diz o indizível.”</blockquote>
+    <blockquote>“Educar pela arte é transformar realidades.”</blockquote>
+  </section>
 
-<footer><footer>
-  <p>&copy; 2025 Centro de Formação Profissional Belas Artes</p>
-  <div style="margin-top: 10px;">
-    <a href="https://facebook.com" target="_blank" style="margin: 0 10px;">Facebook</a>
-    <a href="https://instagram.com" target="_blank" style="margin: 0 10px;">Instagram</a>
-    <a href="https://youtube.com" target="_blank" style="margin: 0 10px;">YouTube</a>
-  </div>
-</footer>
-  &copy; 2025 Centro de Formação Profissional Belas Artes
-</footer>
-
-<script>
-  let galeriaAdmin = false;
-
-  function acessarGaleriaAdmin() {
-    const senha = prompt("Digite a senha do administrador:");
-    if (senha === "belas2025") {
-      galeriaAdmin = true;
-      do'formulario-galeria').style.display = "block";
-      alert("Acesso de administrador concedido.");
-    } else {
-      alert("Senha incorreta.");
-    }
-  }
-
-  function adicionarGaleria() {
-    if (!galeriaAdmin) return;
-
-    const link = document.getElementById('linkGaleria').value.trim();
-    const container = document.createElement('div');
-    container.style.marginBottom = '20px';
-
-    if (link.includes("youtube.com/embed/")) {
-      const iframe = document.createElement('iframe');
-      iframe.src = link;
-      iframe.width = "100%";
-      iframe.height = "200";
-      iframe.style.borderRadius = "10px";
-      iframe.allowFullscreen = true;
-      container.appendChild(iframe);
-    } else if (link.match(/\.(jpeg|jpg|png|webp)$/)) {
-      const img = document.createElement('img');
-      img.src = link;
-      img.style.width = "100%";
-      img.style.borderRadius = "10px";
-      container.appendChild(img);
-    } else {
-      alert("Formato inválido. Use link de imagem (.jpg/.png/.webp) ou embed do YouTube.");
-      return;
-    }
-
-    document.getElementById('galeria-conteudo').appendChild(container);
-    document.getElementById('linkGaleria').value = '';
-  }
-</script>
-
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Centro de Formação Profissional Belas Artes. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
-      
-
-  
