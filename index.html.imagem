@@ -82,6 +82,16 @@
       font-weight: bold;
       border: none;
     }
+    ul#lista-mural li {
+      list-style-type: none;
+      margin-bottom: 15px;
+    }
+    ul#lista-mural img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 10px;
+    }
     footer {
       background: #a0041e;
       color: white;
@@ -139,11 +149,11 @@
   </div>
 
   <div class="highlight" id="mural">
-    <h2>Mural</h2>
+    <h2>Mural de Novidades e Imagens</h2>
     <ul id="lista-mural">
       <li>Inscrições abertas para o 2º trimestre de 2025.</li>
     </ul>
-    <input type="text" id="novo-item" placeholder="Digite uma novidade..." disabled>
+    <input type="text" id="novo-texto" placeholder="Digite um texto ou link de imagem... (ex: https://...)">
     <button onclick="autenticarAdmin()">Sou Administrador</button>
     <button onclick="adicionarItem()" id="botao-adicionar" disabled>Adicionar</button>
   </div>
@@ -183,23 +193,32 @@
     const senha = prompt("Digite o código de administrador:");
     if (senha === "belas2025") {
       autorizado = true;
-      document.getElementById('novo-item').disabled = false;
+      document.getElementById('novo-texto').disabled = false;
       document.getElementById('botao-adicionar').disabled = false;
       alert("Acesso concedido.");
     } else {
       alert("Código incorreto.");
     }
   }
+
   function adicionarItem() {
     if (!autorizado) return;
-    const item = document.getElementById('novo-item').value;
-    if (item.trim() !== '') {
+    const texto = document.getElementById('novo-texto').value.trim();
+    if (texto !== '') {
       const li = document.createElement('li');
-      li.textContent = item;
+      if (texto.startsWith("http") && (texto.endsWith(".jpg") || texto.endsWith(".jpeg") || texto.endsWith(".png") || texto.endsWith(".webp"))) {
+        const img = document.createElement('img');
+        img.src = texto;
+        img.alt = "Imagem do mural";
+        li.appendChild(img);
+      } else {
+        li.textContent = texto;
+      }
       document.getElementById('lista-mural').appendChild(li);
-      document.getElementById('novo-item').value = '';
+      document.getElementById('novo-texto').value = '';
     }
   }
+
   function enviarFormulario() {
     alert("Inscrição enviada com sucesso!");
     return false;
@@ -207,4 +226,4 @@
 </script>
 
 </body>
-      </html>
+</html>
