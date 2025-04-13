@@ -143,3 +143,157 @@
       <button onclick="adicionarGaleria()">Adicionar à Galeria</button>
     </div>
   </div>
+<div class="highlight" id="blog">
+    <h2>Blog & Notícias</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
+        <h3>Nova Turma de Dança Contemporânea</h3>
+        <p><strong>Data:</strong> 10 de Abril de 2025</p>
+        <p>Inscrições abertas! 3 meses de formação com espetáculos de encerramento.</p>
+        <button onclick="alert('Mais detalhes em breve!')">Ler mais</button>
+      </div>
+      <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
+        <h3>Belas Artes no Festival Cultural</h3>
+        <p><strong>Data:</strong> 25 de Março de 2025</p>
+        <p>O centro participou com teatro, música e pintura ao vivo.</p>
+        <button onclick="alert('Mais detalhes em breve!')">Ler mais</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight" id="eventos">
+    <h2>Eventos Culturais</h2>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="background: #fafafa; border-left: 5px solid #a0041e; padding: 15px 20px; border-radius: 8px;">
+        <h3>Espetáculo de Teatro – “Cores da Tradição”</h3>
+        <p><strong>Data:</strong> 30 de Abril de 2025</p>
+        <p>Contos angolanos com direção contemporânea.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight" id="equipa">
+    <h2>Equipe Pedagógica & Direção</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+      <div style="text-align: center;">
+        <img src="https://source.unsplash.com/150x150/?man,teacher" alt="Diretor Pedagógico" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
+        <h4>Dala De Carvalho</h4>
+        <p style="font-size: 0.9em;">Diretor Pedagógico | Educador Musical</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight" id="mural">
+    <h2>Mural de Novidades</h2>
+    <ul id="lista-mural">
+      <li>Inscrições abertas para o curso de Teatro!</li>
+    </ul>
+    <br>
+    <button onclick="acessarMuralAdmin()">Sou Administrador</button>
+    <div id="formulario-mural" style="display: none; margin-top: 20px;">
+      <input type="text" id="novo-item" placeholder="Escreva uma novidade..." />
+      <button onclick="adicionarItemMural()">Adicionar ao Mural</button>
+    </div>
+  </div>
+
+  <div class="highlight" id="inscricao">
+    <h2>Inscreva-se Agora</h2>
+    <form onsubmit="return enviarFormulario();">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="curso">Curso de Interesse:</label>
+      <select id="curso" name="curso" required>
+        <option value="">Selecione</option>
+        <option>Dança Contemporânea</option>
+        <option>Música – Canto & Instrumentos</option>
+        <option>Teatro</option>
+        <option>Artes Visuais</option>
+      </select>
+
+      <button type="submit">Enviar Inscrição</button>
+    </form>
+  </div>
+
+  <div class="highlight" id="contato">
+    <h2>Contato</h2>
+    <p>Email: <a href="mailto:contato@belasartes.co.ao">contato@belasartes.co.ao</a></p>
+    <p>WhatsApp: <a href="https://wa.me/244999999999" target="_blank">+244 999 999 999</a></p>
+    <p>Endereço: Cuito - Bié, Angola</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Centro de Formação Profissional Belas Artes</p>
+  <div style="margin-top: 10px;">
+    <a href="https://facebook.com" target="_blank">Facebook</a> |
+    <a href="https://instagram.com" target="_blank">Instagram</a> |
+    <a href="https://youtube.com" target="_blank">YouTube</a>
+  </div>
+</footer>
+
+<script>
+  let galeriaAdmin = false;
+  function acessarGaleriaAdmin() {
+    const senha = prompt("Digite a senha do administrador:");
+    if (senha === "belas2025") {
+      galeriaAdmin = true;
+      document.getElementById('formulario-galeria').style.display = "block";
+    } else { alert("Senha incorreta."); }
+  }
+  function adicionarGaleria() {
+    if (!galeriaAdmin) return;
+    const link = document.getElementById('linkGaleria').value.trim();
+    const container = document.createElement('div');
+    if (link.includes("youtube.com/embed/")) {
+      const iframe = document.createElement('iframe');
+      iframe.src = link;
+      iframe.width = "100%"; iframe.height = "200"; iframe.style.borderRadius = "10px";
+      iframe.allowFullscreen = true;
+      container.appendChild(iframe);
+    } else if (link.match(/\.(jpeg|jpg|png|webp)$/)) {
+      const img = document.createElement('img');
+      img.src = link;
+      img.style.width = "100%"; img.style.borderRadius = "10px";
+      container.appendChild(img);
+    } else {
+      alert("Formato inválido.");
+      return;
+    }
+    document.getElementById('galeria-conteudo').appendChild(container);
+    document.getElementById('linkGaleria').value = '';
+  }
+
+  let muralAdmin = false;
+  function acessarMuralAdmin() {
+    const senha = prompt("Digite a senha do administrador:");
+    if (senha === "belas2025") {
+      muralAdmin = true;
+      document.getElementById('formulario-mural').style.display = "block";
+    } else {
+      alert("Senha incorreta.");
+    }
+  }
+
+  function adicionarItemMural() {
+    if (!muralAdmin) return;
+    const item = document.getElementById('novo-item').value.trim();
+    if (item !== '') {
+      const li = document.createElement('li');
+      li.textContent = item;
+      document.getElementById('lista-mural').appendChild(li);
+      document.getElementById('novo-item').value = '';
+    }
+  }
+
+  function enviarFormulario() {
+    alert("Inscrição enviada com sucesso!");
+    return false;
+  }
+</script>
+
+</body>
+</html>
