@@ -253,3 +253,91 @@
         <option>Teatro</option>
         <option>Artes Visuais</option>
       </select>
+    <button type="submit">Enviar Inscrição</button>
+    </form>
+  </div>
+
+  <div class="highlight" id="contato">
+  <h2>Contato</h2>
+  <p>Email: <a href="mailto:contato@belasartes.co.ao">contato@belasartes.co.ao</a></p>
+  <p>WhatsApp: <a href="https://wa.me/244999999999" target="_blank">+244 999 999 999</a></p>
+  <p>Endereço: Cuito - Bié, Angola</p>
+
+  <h3>Localização (Em breve)</h3>
+  <div style="background: #eee; padding: 15px; border-radius: 10px; text-align: center;">
+    <em>Mapa será adicionado aqui futuramente com integração ao Google Maps.</em>
+  </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Centro de Formação Profissional Belas Artes</p>
+  <div style="margin-top: 10px;">
+    <a href="https://facebook.com" target="_blank">Facebook</a> |
+    <a href="https://instagram.com" target="_blank">Instagram</a> |
+    <a href="https://youtube.com" target="_blank">YouTube</a>
+  </div>
+</footer>
+
+<script>
+  let galeriaAdmin = false;
+  function acessarGaleriaAdmin() {
+    const senha = prompt("Digite a senha do administrador:");
+    if (senha === "belas2025") {
+      galeriaAdmin = true;
+      document.getElementById('formulario-galeria').style.display = "block";
+    } else { alert("Senha incorreta."); }
+  }
+  function adicionarGaleria() {
+    if (!galeriaAdmin) return;
+    const link = document.getElementById('linkGaleria').value.trim();
+    const container = document.createElement('div');
+    if (link.includes("youtube.com/embed/")) {
+      const iframe = document.createElement('iframe');
+      iframe.src = link;
+      iframe.width = "100%"; iframe.height = "200"; iframe.style.borderRadius = "10px";
+      iframe.allowFullscreen = true;
+      container.appendChild(iframe);
+    } else if (link.match(/\.(jpeg|jpg|png|webp)$/)) {
+      const img = document.createElement('img');
+      img.src = link;
+      img.style.width = "100%"; img.style.borderRadius = "10px";
+      container.appendChild(img);
+    } else {
+      alert("Formato inválido.");
+      return;
+    }
+    document.getElementById('galeria-conteudo').appendChild(container);
+    document.getElementById('linkGaleria').value = '';
+  }
+
+  let muralAdmin = false;
+  function acessarMuralAdmin() {
+    const senha = prompt("Digite a senha do administrador:");
+    if (senha === "belas2025") {
+      muralAdmin = true;
+      document.getElementById('formulario-mural').style.display = "block";
+    } else {
+      alert("Senha incorreta.");
+    }
+  }
+
+  function adicionarItemMural() {
+    if (!muralAdmin) return;
+    const item = document.getElementById('novo-item').value.trim();
+    if (item !== '') {
+      const li = document.createElement('li');
+      li.textContent = item;
+      document.getElementById('lista-mural').appendChild(li);
+      document.getElementById('novo-item').value = '';
+    }
+  }
+
+  function enviarFormulario() {
+    alert("Inscrição enviada com sucesso!");
+    return false;
+  }
+</script>
+
+</body>
+</html>
