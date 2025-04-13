@@ -93,4 +93,70 @@
 <nav>
   <a href="#cursos">Cursos</a>
   <a href="#galeria">Galeria</a>
-  <a 
+  <a href="#blog">Blog</a>
+  <a href="#eventos">Eventos</a>
+  <a href="#equipa">Equipe</a>
+  <a href="#mural">Mural</a>
+  <a href="#inscricao">Inscrição</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<section>
+  <div class="highlight" id="cursos">
+    <h2>Cursos em Destaque</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+      <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
+        <h3>Dança Contemporânea</h3>
+        <p>Expressão corporal e técnica com foco na criação coreográfica moderna.</p>
+      </div>
+      <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
+        <h3>Música – Canto & Instrumentos</h3>
+        <p>Aulas práticas e teóricas com professores especializados em vários estilos.</p>
+      </div>
+      <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
+        <h3>Teatro</h3>
+        <p>Formação em atuação e direção, com apresentações públicas e orientação artística.</p>
+      </div>
+      <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
+        <h3>Artes Visuais</h3>
+        <p>Desenho, pintura e técnicas de expressão visual para artistas em formação.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight" id="galeria">
+    <h2>Galeria Interativa de Fotos e Vídeos</h2>
+    <div id="galeria-conteudo" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      <div>
+        <img src="https://source.unsplash.com/400x300/?dance" alt="Imagem inicial" style="width: 100%; border-radius: 10px;">
+        <p style="text-align: center;">Apresentação artística</p>
+      </div>
+      <div>
+        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo Apresentação" allowfullscreen></iframe>
+        <p style="text-align: center;">Vídeo institucional</p>
+      </div>
+    </div>
+    <br>
+    <button onclick="acessarGaleriaAdmin()">Sou Administrador</button>
+    <div id="formulario-galeria" style="display: none; margin-top: 20px;">
+      <input type="text" id="linkGaleria" placeholder="Cole o link da imagem ou vídeo (ex: https://...)" />
+      <button onclick="adicionarGaleria()">Adicionar à Galeria</button>
+    </div>
+  </div>
+<div class="highlight" id="blog">
+    <h2>Blog & Notícias</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
+        <h3>Nova Turma de Dança Contemporânea</h3>
+        <p><strong>Data:</strong> 10 de Abril de 2025</p>
+        <p>Inscrições abertas! 3 meses de formação com espetáculos de encerramento.</p>
+        <button onclick="alert('Mais detalhes em breve!')">Ler mais</button>
+      </div>
+      <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
+        <h3>Belas Artes no Festival Cultural</h3>
+        <p><strong>Data:</strong> 25 de Março de 2025</p>
+        <p>O centro participou com teatro, música e pintura ao vivo.</p>
+        <button onclick="alert('Mais detalhes em breve!')">Ler mais</button>
+      </div>
+    </div>
+</div>
