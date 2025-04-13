@@ -160,3 +160,96 @@
       </div>
     </div>
 </div>
+<div class="highlight" id="eventos">
+  <h2>Eventos Culturais</h2>
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    
+    <div style="background: #fafafa; border-left: 5px solid #a0041e; padding: 15px 20px; border-radius: 8px;">
+      <h3 style="margin-bottom: 5px;">Espetáculo de Teatro – “Cores da Tradição”</h3>
+      <p><strong>Data:</strong> 30 de Abril de 2025</p>
+      <p>Apresentação final dos alunos de Teatro com contos angolanos e direção moderna.</p>
+    </div>
+
+    <div style="background: #fafafa; border-left: 5px solid #a0041e; padding: 15px 20px; border-radius: 8px;">
+      <h3 style="margin-bottom: 5px;">Exposição de Artes Visuais</h3>
+      <p><strong>Data:</strong> 15 de Maio de 2025</p>
+      <p>Obras dos alunos de Artes Plásticas abertas ao público em galeria temática.</p>
+    </div>
+
+    <div style="background: #fafafa; border-left: 5px solid #a0041e; padding: 15px 20px; border-radius: 8px;">
+      <h3 style="margin-bottom: 5px;">Festival Belas Artes</h3>
+      <p><strong>Data:</strong> 10 de Junho de 2025</p>
+      <p>Um dia com dança, música, performances e feira de talentos artísticos.</p>
+    </div>
+
+  </div>
+  </div>
+    </div>
+  </div>
+
+  <div class="highlight" id="equipa">
+  <h2>Equipe Pedagógica & Direção</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+
+    <div style="text-align: center;">
+      <img src="https://source.unsplash.com/150x150/?man,teacher" alt="Diretor Pedagógico" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
+      <h4 style="margin: 10px 0 5px;">Dala De Carvalho</h4>
+      <p style="font-size: 0.9em;">Diretor Pedagógico | Educador Musical</p>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://source.unsplash.com/150x150/?woman,teacher" alt="Professora de Dança" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
+      <h4 style="margin: 10px 0 5px;">Helena Soares</h4>
+      <p style="font-size: 0.9em;">Professora de Dança Contemporânea</p>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://source.unsplash.com/150x150/?musician" alt="Professor de Música" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
+      <h4 style="margin: 10px 0 5px;">Carlos André</h4>
+      <p style="font-size: 0.9em;">Professor de Canto & Instrumentos</p>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://source.unsplash.com/150x150/?artist" alt="Professor de Artes" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
+      <h4 style="margin: 10px 0 5px;">Sandra Kiala</h4>
+      <p style="font-size: 0.9em;">Professora de Pintura e Desenho</p>
+    </div>
+
+  </div>
+  </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight" id="mural">
+  <h2>Mural de Novidades</h2>
+  <ul id="lista-mural">
+    <li>Inscrições abertas para o curso de Teatro!</li>
+    <li>Show de talentos no próximo sábado às 18h.</li>
+  </ul>
+  <br>
+  <button onclick="acessarMuralAdmin()">Sou Administrador</button>
+  <div id="formulario-mural" style="display: none; margin-top: 20px;">
+    <input type="text" id="novo-item" placeholder="Escreva uma novidade..." />
+    <button onclick="adicionarItemMural()">Adicionar ao Mural</button>
+  </div>
+  </div>
+  </div>
+
+  <div class="highlight" id="inscricao">
+    <h2>Inscreva-se Agora</h2>
+    <form onsubmit="return enviarFormulario();">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="curso">Curso de Interesse:</label>
+      <select id="curso" name="curso" required>
+        <option value="">Selecione</option>
+        <option>Dança Contemporânea</option>
+        <option>Música – Canto & Instrumentos</option>
+        <option>Teatro</option>
+        <option>Artes Visuais</option>
+      </select>
