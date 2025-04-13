@@ -13,7 +13,6 @@
       font-family: 'Inter', sans-serif;
       background: #f8f8f8;
       color: #333;
-      animation: fadeIn 1s ease-in-out;
     }
     header {
       background: linear-gradient(to right, #a0041e, #f5af19);
@@ -37,10 +36,6 @@
       text-decoration: none;
       color: #a0041e;
       font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #f5af19;
     }
     section {
       max-width: 1100px;
@@ -53,7 +48,6 @@
       border-radius: 12px;
       margin-bottom: 25px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      animation: fadeInUp 0.8s ease-in-out;
     }
     h2 { color: #a0041e; }
     iframe {
@@ -62,7 +56,7 @@
       border: none;
       border-radius: 10px;
     }
-    input, button {
+    input, select, button, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
@@ -77,7 +71,6 @@
       font-weight: bold;
       border: none;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
     button:hover {
       background: #800317;
@@ -88,25 +81,6 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      iframe {
-        height: 200px;
-      }
     }
   </style>
 </head>
@@ -128,14 +102,6 @@
 </nav>
 
 <section>
-  <div class="highlight">
-    <h2>Exemplo de Seção</h2>
-    <p>O conteúdo será inserido manualmente com base no projeto.</p>
-  </div>
-      
-</nav>
-
-<section>
   <div class="highlight" id="cursos">
     <h2>Cursos em Destaque</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
@@ -143,7 +109,8 @@
         <h3>Dança Contemporânea</h3>
         <p>Expressão corporal e técnica com foco na criação coreográfica moderna.</p>
       </div>
-      <div style="background: #fafafa; paddinumentos</h3>
+      <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
+        <h3>Música – Canto & Instrumentos</h3>
         <p>Aulas práticas e teóricas com professores especializados em vários estilos.</p>
       </div>
       <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
