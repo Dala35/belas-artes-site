@@ -7,7 +7,7 @@
   <title>Centro Belas Artes</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -50,24 +50,13 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
     h2 { color: #a0041e; }
-    .courses, .equipe-grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .course {
-      background: #fafafa;
-      padding: 15px;
-      border-radius: 8px;
-      border-left: 4px solid #a0041e;
-    }
     iframe {
       width: 100%;
       height: 300px;
       border: none;
       border-radius: 10px;
     }
-    input, select, button {
+    input, select, button, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
@@ -81,16 +70,10 @@
       color: #fff;
       font-weight: bold;
       border: none;
+      cursor: pointer;
     }
-    ul#lista-mural li {
-      list-style-type: none;
-      margin-bottom: 15px;
-    }
-    ul#lista-mural img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-top: 10px;
+    button:hover {
+      background: #800317;
     }
     footer {
       background: #a0041e;
@@ -102,7 +85,6 @@
   </style>
 </head>
 <body>
-
 <header>
   <h1>Centro de Formação Profissional Belas Artes</h1>
   <p>Transformando talentos em carreiras com arte e cultura</p>
@@ -120,224 +102,44 @@
 </nav>
 
 <section>
-  <div class="highlight">
-    <h2>Missão</h2>
-    <p>Formar profissionais nas áreas artísticas com excelência, promovendo a cultura angolana e desenvolvendo o potencial criativo da juventude.</p>
-  </div>
-
   <div class="highlight" id="cursos">
-    <h2>Cursos</h2>
-    <div class="courses">
-      <div class="course"><h3>Dança Contemporânea</h3><p>Expressão e técnica com criação coreográfica moderna.</p></div>
-      <div class="course"><h3>Canto & Instrumentos</h3><p>Aulas práticas com profissionais experientes.</p></div>
-      <div class="course"><h3>Teatro</h3><p>Formação em actuação e direção com apresentações públicas.</p></div>
-      <div class="course"><h3>Artes Visuais</h3><p>Desenho e pintura para artistas iniciantes e avançados.</p></div>
-    </div>
-  </div>
-<div class="highlight" id="galeria">
-  <h2>Galeria Interativa de Fotos e Vídeos</h2>
-
-  <div id="galeria-conteudo" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-    <div>
-      <img src="https://source.unsplash.com/400x300/?dance" alt="Imagem inicial" style="width: 100%; border-radius: 10px;">
-      <p style="text-align: center;">Apresentação artística</p>
-    </div>
-    <div>
-      <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo Apresentação" allowfullscreen style="width: 100%; height: 200px; border-radius: 10px;"></iframe>
-      <p style="text-align: center;">Vídeo institucional</p>
-    </div>
-  </div>
-
-  <br>
-  <button onclick="acessarGaleriaAdmin()">Sou Administrador</button>
-  <div id="formulario-galeria" style="display: none; margin-top: 20px;">
-    <input type="text" id="linkGaleria" placeholder="Cole o link da imagem ou vídeo (ex: https://...)" />
-    <button onclick="adicionarGaleria()">Adicionar à Galeria</button>
-  </div>
-</div>
-
-<script>
-  let galeriaAdmin = false;
-
-  function acessarGaleriaAdmin() {
-    const senha = prompt("Digite a senha do administrador:");
-    if (senha === "belas2025") {
-      galeriaAdmin = true;
-      document.getElementById('formulario-galeria').style.display = "block";
-      alert("Acesso de administrador concedido.");
-    } else {
-      alert("Senha incorreta.");
-    }
-  }
-
-  function adicionarGaleria() {
-    if (!galeriaAdmin) return;
-
-    const link = document.getElementById('linkGaleria').value.trim();
-    const container = document.createElement('div');
-
-    if (link.includes("youtube.com/embed/")) {
-      const iframe = document.createElement('iframe');
-      iframe.src = link;
-      iframe.width = "100%";
-      iframe.height = "200";
-      iframe.style.borderRadius = "10px";
-      iframe.allowFullscreen = true;
-      container.appendChild(iframe);
-    } else if (link.match(/\.(jpeg|jpg|png|webp)$/)) {
-      const img = document.createElement('img');
-      img.src = link;
-      img.style.width = "100%";
-      img.style.borderRadius = "10px";
-      container.appendChild(img);
-    } else {
-      alert("Formato inválido. Use link de imagem (.jpg/.png/.webp) ou embed do YouTube.");
-      return;
-    }
-
-    document.getElementById('galeria-conteudo').appendChild(container);
-    document.getElementById('linkGaleria').value = '';
-  }
-</script>
-  </div>
-
-  <div class="highlight" id="blog">
-    <h2>Blog – Notícias e Artigos</h2>
-    <div class="courses">
-      <div class="course">
-        <h3>5 Dicas para Melhorar sua Performance no Palco</h3>
-        <p>Descubra técnicas simples que farão diferença nas suas apresentações.</p>
-        <a href="#" style="color:#a0041e; font-weight:bold;">Ler mais</a>
+    <h2>Cursos em Destaque</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+      <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
+        <h3>Dança Contemporânea</h3>
+        <p>Expressão corporal e técnica com foco na criação coreográfica moderna.</p>
       </div>
-      <div class="course">
-        <h3>A Importância da Arte na Formação de Jovens</h3>
-        <p>Como a educação artística contribui para o desenvolvimento pessoal.</p>
-        <a href="#" style="color:#a0041e; font-weight:bold;">Ler mais</a>
-        <div class="highlight" id="blog">
-  <h2>Blog & Notícias</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-    
-    <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
-      <h3>Nova turma de Dança Contemporânea</h3>
-      <p><strong>Data:</strong> 10 de Abril de 2025</p>
-      <p>Estão abertas as inscrições para a nova turma de Dança. Serão 3 meses de formação com espetáculos no final.</p>
-      <button onclick="alert('Em breve disponível!')">Ler mais</button>
-    </div>
-    
-    <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
-      <h3>Belas Artes no Festival Cultural</h3>
-      <p><strong>Data:</strong> 25 de Março de 2025</p>
-      <p>O centro marcou presença com apresentações de teatro, música e pintura ao vivo. Veja os melhores momentos!</p>
-      <button onclick="alert('Em breve disponível!')">Ler mais</button>
-    </div>
-
-    <div style="border: 1px solid #eee; border-radius: 10px; padding: 15px; background: #fafafa;">
-      <h3>Oficina de Pintura com Artistas Locais</h3>
-      <p><strong>Data:</strong> 12 de Fevereiro de 2025</p>
-      <p>Realizamos uma oficina aberta com artistas convidados para ensinar técnicas de pintura tradicional angolana.</p>
-      <button onclick="alert('Em breve disponível!')">Ler mais</button>
-    </div>
-
-  </div>
-        </div>
+      <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
+        <h3>Música – Canto & Instrumentos</h3>
+        <p>Aulas práticas e teóricas com professores especializados em vários estilos.</p>
+      </div>
+      <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
+        <h3>Teatro</h3>
+        <p>Formação em atuação e direção, com apresentações públicas e orientação artística.</p>
+      </div>
+      <div style="background: #fafafa; padding: 15px; border-radius: 10px;">
+        <h3>Artes Visuais</h3>
+        <p>Desenho, pintura e técnicas de expressão visual para artistas em formação.</p>
       </div>
     </div>
   </div>
 
-  <div class="highlight" id="eventos">
-    <h2>Eventos Culturais</h2>
-    <ul style="padding-left: 20px;">
-      <li><strong>10 de Maio:</strong> Espetáculo de Teatro "A Voz da Tradição"</li>
-      <li><strong>25 de Maio:</strong> Concerto de Encerramento com turma de Música</li>
-      <li><strong>15 de Junho:</strong> Exposição de Pintura dos alunos de Artes Visuais</li>
-    </ul>
-  </div>
-
-  <div class="highlight" id="equipa">
-    <h2>Equipe Pedagógica</h2>
-    <div class="equipe-grid">
-      <div class="course"><h3>Dala De Carvalho</h3><p>Diretor Pedagógico e especialista em música tradicional angolana.</p></div>
-      <div class="course"><h3>Maria Domingos</h3><p>Professora de Dança – Ballet e folclore angolano.</p></div>
-      <div class="course"><h3>José Luvumbo</h3><p>Professor de Artes Plásticas – Desenho e pintura.</p></div>
+  <div class="highlight" id="galeria">
+    <h2>Galeria Interativa de Fotos e Vídeos</h2>
+    <div id="galeria-conteudo" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      <div>
+        <img src="https://source.unsplash.com/400x300/?dance" alt="Imagem inicial" style="width: 100%; border-radius: 10px;">
+        <p style="text-align: center;">Apresentação artística</p>
+      </div>
+      <div>
+        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo Apresentação" allowfullscreen></iframe>
+        <p style="text-align: center;">Vídeo institucional</p>
+      </div>
+    </div>
+    <br>
+    <button onclick="acessarGaleriaAdmin()">Sou Administrador</button>
+    <div id="formulario-galeria" style="display: none; margin-top: 20px;">
+      <input type="text" id="linkGaleria" placeholder="Cole o link da imagem ou vídeo (ex: https://...)" />
+      <button onclick="adicionarGaleria()">Adicionar à Galeria</button>
     </div>
   </div>
-
-  <div class="highlight" id="mural">
-    <h2>Mural de Novidades e Imagens</h2>
-    <ul id="lista-mural">
-      <li>Inscrições abertas para o 2º trimestre de 2025.</li>
-    </ul>
-    <input type="text" id="novo-texto" placeholder="Digite um texto ou link de imagem... (ex: https://...)">
-    <button onclick="autenticarAdmin()">Sou Administrador</button>
-    <button onclick="adicionarItem()" id="botao-adicionar" disabled>Adicionar</button>
-  </div>
-
-  <div class="highlight" id="inscricao">
-    <h2>Formulário de Inscrição</h2>
-    <form onsubmit="return enviarFormulario();">
-      <label>Nome:</label><input type="text" required>
-      <label>Email:</label><input type="email" required>
-      <label>Curso:</label>
-      <select required>
-        <option value="">Selecione...</option>
-        <option>Dança</option>
-        <option>Música</option>
-        <option>Teatro</option>
-        <option>Artes Visuais</option>
-      </select>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-
-  <div class="highlight" id="contato">
-    <h2>Contato</h2>
-    <p>Email: contato@belasartes.co.ao<br>WhatsApp: +244 999 999 999</p>
-  </div>
-</section>
-
-<footer>
-  &copy; 2025 Centro de Formação Profissional Belas Artes
-  <br>
-  <small>Siga-nos: Facebook | Instagram | YouTube</small>
-</footer>
-
-<script>
-  let autorizado = false;
-  function autenticarAdmin() {
-    const senha = prompt("Digite o código de administrador:");
-    if (senha === "belas2025") {
-      autorizado = true;
-      document.getElementById('novo-texto').disabled = false;
-      document.getElementById('botao-adicionar').disabled = false;
-      alert("Acesso concedido.");
-    } else {
-      alert("Código incorreto.");
-    }
-  }
-
-  function adicionarItem() {
-    if (!autorizado) return;
-    const texto = document.getElementById('novo-texto').value.trim();
-    if (texto !== '') {
-      const li = document.createElement('li');
-      if (texto.startsWith("http") && (texto.endsWith(".jpg") || texto.endsWith(".jpeg") || texto.endsWith(".png") || texto.endsWith(".webp"))) {
-        const img = document.createElement('img');
-        img.src = texto;
-        img.alt = "Imagem do mural";
-        li.appendChild(img);
-      } else {
-        li.textContent = texto;
-      }
-      document.getElementById('lista-mural').appendChild(li);
-      document.getElementById('novo-texto').value = '';
-    }
-  }
-
-  function enviarFormulario() {
-    alert("Inscrição enviada com sucesso!");
-    return false;
-  }
-</script>
-
-</body>
-</html>
